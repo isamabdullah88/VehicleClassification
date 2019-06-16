@@ -3,5 +3,5 @@
 	"IMG_DIR": "cars_train",
 	"BATCH_SIZE": 16,
 	"NUM_CLASSES": 196,
-	"IMG_SIZE": 150
+	"IMG_SIZE": 224
 }
