@@ -5,6 +5,14 @@ from mat4py import loadmat
 
 
 def get_imgpath_labels(matfile_name, debug=False, train=True):
+    """
+    This function fetches the list of image names and labels from the annotation files.
+    ARGS:
+    matfile_name: The name of the annotation matfile.
+    OUTPUTS:
+    imgname_list: List containing image names.
+    labels: List containing labels with adjusted values. i.e. starting with 0
+    """
     matpath = os.path.join(DATA_DIR, matfile_name)
     data = loadmat(matpath)
     annos = data['annotations']

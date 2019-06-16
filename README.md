@@ -29,18 +29,21 @@ pip install scikit-image
 ```
 
 ## Usage
+- Please note the this repo is only tested on Windows 10.
 - To use first clone the repository.
 - Please run all the commands inside the **1_code/** folder of the repository.
 
 ### Testing/Evaluation
 - Download the pre-trained model from this [link](). Place the downloaded file in **2_outputs/trainedModels/** folder in the project.
 - In order to test the pre-trained model, this [notebook](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/demo.ipynb) shows simple demo code.
+- Please note that all the trained models should reside in **2_outputs/trainedModels/** directory. It is highly recommended to give *relative* paths to the models.
 - In order to evaluate[get metrics], use the evaluate method in  [evaluate.py](). Please do not forget to place the images folder and annotations mat file in the **0_data** folder of the project. Remember to match the annotation matfile exactly with the given matfiles from the dataset.
 
 ### Training
-To train models from scratch or fine_tune/transfer_learn, please look at the [train.py](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/train.py) file.
-
-Here is a short snippet, which can be used for training models.
+- To train models from scratch or fine_tune/transfer_learn, please look at the [train.py](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/train.py) file.
+- For the resnet152 model , I have partially used implementation of [this](https://gist.github.com/flyyufelix/7e2eafb149f72f4d38dd661882c554a6) gist. In order to transfer-learn using resnet152, please download pre-trained model from [here](https://drive.google.com/file/d/0Byy2AcGyEVxfeXExMzNNOHpEODg/view) and place inside the **2_outputs/preTrainedModels** directory.
+- Please adjust the parameters in **config.json** file for training.
+- Here is a short sample snippet, which can be used for training models.
 ```python
 from train import TrainModel
 
@@ -74,8 +77,7 @@ tensorboard --logdir ../2_ouputs/tensorBoard
 - Since the dataset is small, in order to improve generalizability, data augmentation has been performed. Can be seen in the [imageGenerator.py](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/imageGenerator.py).
 
 ### Results
-- Training and experimenting with various architectures with given compute resources, an accuracy of 88% has been obtained on a 20% validation set from training data.
-- Metrics like precision, recall and AUC curve can be obtained.
+- Training and experimenting with various architectures with given compute resources, an accuracy of ~80% has been obtained on a 20% validation set from training data.
 
 ### Improvements
 -  The most straightforward way of improvement is by increasing the dataset size.
@@ -88,5 +90,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 [GNU](https://github.com/isamabdullah88/VehicleClassification/blob/master/LICENSE)
+
+
 
 
