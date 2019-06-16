@@ -7,6 +7,8 @@ from data import get_imgpath_labels
 from keras.models import load_model
 from mat4py import loadmat
 
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+
 
 class TestModel(object):
 	"""Class for testing the trained model with an input image"""
@@ -47,16 +49,16 @@ class TestModel(object):
 
 
 
-def main():
+def evaluate():
 	model_path = '../2_outputs/trainedModels/model.h5'
 
 	testModel = TestModel(model_path)
 
 	test_matfile = 'devkit/cars_test_annos.mat'
 
-	img_names_list, _ = get_imgpath_labels(test_matfile, train=False)
+	img_names_list, labels_list = get_imgpath_labels(test_matfile, train=False)
 
-	preds_list = []
+	pred_class_list = []
 	conf_list = []
 
 	total_img_count = len(img_names_list)
@@ -66,8 +68,14 @@ def main():
 
 		pred_class, conf_class, class_name = testModel.get_preds(filepath)
 
+		pred_class_list.append(pred_class)
+		conf_list.append(conf_class)
+
 		print('Processed: {0:d}/{1:d}'.format(i, total_img_count))
 
+	print('Accuracy: ', accuracy_score(labels_list, pred_class_list))
+	print('Precision: ', precision_score(labels_list, pred_class_list))
+	print('Recall: ', recall_score(labels_list, pred_class_list))
 
 if __name__ == '__main__':
-	main()
+	evaluate()
