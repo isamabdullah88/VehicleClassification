@@ -34,12 +34,14 @@ pip install scikit-image
 - Please run all the commands inside the **1_code/** folder of the repository.
 
 ### Testing/Evaluation
+- Create a folder named **trainedModels** in the **2_outputs** directory of repo.
 - Download the pre-trained model from this [link](). Place the downloaded file in **2_outputs/trainedModels/** folder in the project.
 - In order to test the pre-trained model, this [notebook](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/demo.ipynb) shows simple demo code.
 - Please note that all the trained models should reside in **2_outputs/trainedModels/** directory. It is highly recommended to give *relative* paths to the models.
 - In order to evaluate[get metrics], use the evaluate method in  [evaluate.py](). Please do not forget to place the images folder and annotations mat file in the **0_data** folder of the project. Remember to match the annotation matfile exactly with the given matfiles from the dataset.
 
 ### Training
+- Create a folder named **preTrainedModels** in the **2_outputs** directory of repo.
 - To train models from scratch or fine_tune/transfer_learn, please look at the [train.py](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/train.py) file.
 - For the resnet152 model , I have partially used implementation of [this](https://gist.github.com/flyyufelix/7e2eafb149f72f4d38dd661882c554a6) gist. In order to transfer-learn using resnet152, please download pre-trained model from [here](https://drive.google.com/file/d/0Byy2AcGyEVxfeXExMzNNOHpEODg/view) and place inside the **2_outputs/preTrainedModels** directory.
 - Please adjust the parameters in **config.json** file for training.
@@ -90,7 +92,5 @@ Please make sure to update tests as appropriate.
 
 ## License
 [GNU](https://github.com/isamabdullah88/VehicleClassification/blob/master/LICENSE)
-
-
 
 
