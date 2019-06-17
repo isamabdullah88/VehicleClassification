@@ -35,8 +35,8 @@ pip install scikit-image
 
 ### Testing/Evaluation
 - Create a folder named **trainedModels** in the **2_outputs** directory of repo.
-- Download the pre-trained model from this [link](). Place the downloaded file in **2_outputs/trainedModels/** folder in the project.
-- In order to test the pre-trained model, this [notebook](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/demo.ipynb) shows simple demo code.
+- Download the trained model from this [link](https://drive.google.com/open?id=1TS8xHgp2ad-gq583XUC1tuqim_-b04Vt). Place the downloaded file in **2_outputs/trainedModels/** folder in the project.
+- In order to test the trained model, this [notebook](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/demo.ipynb) shows simple demo code.
 - Please note that all the trained models should reside in **2_outputs/trainedModels/** directory. It is highly recommended to give *relative* paths to the models.
 - In order to evaluate[get metrics], use the evaluate method in  [evaluate.py](). Please do not forget to place the images folder and annotations mat file in the **0_data** folder of the project. Remember to match the annotation matfile exactly with the given matfiles from the dataset.
 
@@ -79,7 +79,7 @@ tensorboard --logdir ../2_ouputs/tensorBoard
 - Since the dataset is small, in order to improve generalizability, data augmentation has been performed. Can be seen in the [imageGenerator.py](https://github.com/isamabdullah88/VehicleClassification/blob/master/1_code/imageGenerator.py).
 
 ### Results
-- Training and experimenting with various architectures with given compute resources, an accuracy of ~80% has been obtained on a 20% validation set from training data.
+- Training and experimenting with various architectures with given compute resources, an accuracy of 65% has been obtained on a 20% validation set from training data.
 
 ### Improvements
 -  The most straightforward way of improvement is by increasing the dataset size.
